@@ -1,58 +1,131 @@
-<!<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Board Master</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Main Content -->
-    <div id="homepage">
-        <header>
-            <img src="logo.png" alt="Board Master Logo" class="logo">
-            <h1>BOARD MASTER</h1>
-        </header>
+	<h1>
+  <div class="logo">∞</div>
+  <span class="adjective">ephemeral<sup class="asterisk">*</sup></span>
+	<span>tic-tac-toe</span>
+  <small>(2 players)</small>
+</h1>
 
-        <!-- Game Selection -->
-        <div id="gameSelection" class="tiles">
-            <div class="tile">
-              <div class="tile">
-                <div class="tile">
-                <a href="#" onclick="showGame('chessGame'); return false;">
-                    <img src="https://images.unsplash.com/photo-1626463667906-ee4fbcf6bebd?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Mzc3MTE1ODZ8&ixlib=rb-4.0.3&q=85
-" alt="Chess">
-                    <span>Chess</span>
-                </a>
-            </div>
-            <div class="tile">
-                <a href="#" onclick="showGame('checkersGame'); return false;">
-                    <img src="https://images.unsplash.com/photo-1610232826230-e5e6c6a1efef?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Mzc3MjQ5OTR8&ixlib=rb-4.0.3&q=85" alt="Checkers">
-                    <span>Checkers</span>
-                </a>
-            </div>
-            <div class="tile">
-                <a href="#" onclick="showGame('tictactoeGame'); return false;">
-                    <img src="https://images.unsplash.com/photo-1734352749174-32c5f5919a02?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Mzc3MjUxNTB8&ixlib=rb-4.0.3&q=85" alt="Tic-Tac-Toe">
-                    <span>Tic-Tac-Toe</span>
-                </a>
-            </div>
+<table class="xo">
+  <tr>
+    <td data-number=""></td>
+    <td data-number=""></td>
+    <td data-number=""></td>
+  </tr>
+  <tr>
+    <td data-number=""></td>
+    <td data-number=""></td>
+    <td data-number=""></td>
+  </tr>
+  <tr>
+    <td data-number=""></td>
+    <td data-number=""></td>
+    <td data-number=""></td>
+  </tr>
+</table>
+
+
+<img tabindex="0" class="ttt-winner" src="https://assets.codepen.io/8247/tic-tac-toe-a-winner.webp" alt="Nancy Pelosi Tic-tac-toe winner GIF">
+
+<footer>
+  
+  <div class="game-status">
+    <div class="turn">
+      <span class="player-1"><b>⨯</b> <strong>PLAYER&thinsp;1</strong>'s turn</span>
+      <span class="player-2"><i>⭘</i> <strong>PLAYER&thinsp;2</strong>'s turn</span>
+    </div>
+    <div>
+      <span class="win player-2 rubberband"><strong>🎉 PLAYER&thinsp;1 wins!</strong></span>
+      <span class="win player-1 rubberband"><strong>🎉 PLAYER&thinsp;2 wins!</strong></span>
+    </div>
+  </div>
+  
+	<button class="reset-btn">
+		<span class="reset">Reset</span>
+		<span class="new-game">New Game</span>
+	</button>
+  
+  <hr>
+  
+  <div class="description">
+    <sup class="asterisk">*</sup>&hairsp;<span><strong>Symbols disappear after 4 moves</strong></span>
+    <small style="margin-top: -.05em; line-height: 1.5; display: block;">As indicated by the depleating circles above each symbol:</small>
+    <div class="info-game">
+        <div class="remaining-life">
+          <span class="circle filled"></span><span class="circle filled"></span><span class="circle filled"></span>
         </div>
-
-        <!-- Game Area -->
-        <div id="gameArea">
-            <div id="chessGame" class="game hidden">Chess Game Content</div>
-            <div id="checkersGame" class="game hidden">Checkers Game Content</div>
-            <div id="tictactoeGame" class="game hidden">Tic-Tac-Toe Game Content</div>
+        <div>➜</div>‍
+        <div class="remaining-life">
+          <span class="circle filled"></span><span class="circle filled"></span><span class="circle outlined"></span>
         </div>
-
-        <!-- Buttons -->
-        <div class="buttons">
-            <a href="setting.html" class="button">Settings</a>
-            <a href="#" class="button">Donate Us</a>
+        <div>➜</div>‍
+        <div class="remaining-life">
+          <span class="circle filled"></span><span class="circle outlined"></span><span class="circle outlined"></span>
+        </div>
+        <div>➜</div>‍
+        <div class="remaining-life">
+          <span class="circle outlined"></span><span class="circle outlined"></span><span class="circle outlined"></span>
+        </div>
+        <div>➜</div>‍
+        <div class="remaining-life">
+          <small style="font-style:italic; color: #888;">GONE!</small>💨
         </div>
     </div>
+  </div>
+  
+  <hr>
+  
+  <p class="description">
+    <sup style="left: -1.5ch; top: 1ch;">⌨️</sup>
+    <strong>
+      Keyboard navigation
+    </strong>
+    <small style="line-height: 1.5; display: block;">
+      Navigate using the arrow keys 
+      or
+      <kbd>W</kbd>,
+      <kbd>A</kbd>,
+      <kbd>S</kbd>, and
+      <kbd>D</kbd>. 
+      Use the <kbd>Spacebar</kbd> to place symbols.
+      <span style="font-style: italic;">Note: </span>
+      use <kbd>Tab</kbd> to navigate into the game board first.
+    </small>
+  </p>
+  
+  <hr>
+  
+  <small style="font-style: italic; text-align: center;">
+    Built by 
+    <a target="_blank" title="Opens in a new tab"
+       class="built-by hover-slide"
+       href="https://twitter.com/nonsalant"
+    >
+      &thinsp;Stefan Matei&thinsp;
+    </a>
+  </small>
+</footer>
 
-    <script src="script.js"></script>
-</body>
-</html>
+<ul class="theme-picker">
+  <li>
+    <button tabindex="1" class="picker-dark | primary" type="button" title="Switch to Dark">
+      <div class="picker-label">Dark</div>
+      <span class="icon" aria-hidden="true">☾</span>
+    </button>
+  </li>
+  <li>
+    <button class="picker-light | primary" type="button" title="Switch to Light">
+      <div class="picker-label">Light</div>
+      <span class="icon" aria-hidden="true">&#9728;</span>
+    </button>
+  </li>
+  <li>
+    <button class="picker-auto | primary" type="button" title="Switch to Auto">
+      <div class="picker-label">Auto</div>
+      <span class="icon" aria-hidden="true">◐</span>
+    </button>
+  </li>
+</ul>
+
+<div class="pyro">
+  <div class="before"></div><div class="after"></div>
+</div>
